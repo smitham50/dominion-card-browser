@@ -25,8 +25,11 @@ h2 {
 }
 
 #card-info {
-  border: solid white .5px;
+  border: solid #00000038 .5px;
+  border-radius: 2px;
+  background: #0000001f;
   width: 50%;
+  padding-left: 5px;
   margin-left: 5%;
 }
 
