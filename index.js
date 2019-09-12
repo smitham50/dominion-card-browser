@@ -1,7 +1,7 @@
 const list = document.querySelector('#list')
 const info = document.querySelector('#card-info')
 const cards = []
-let listItems
+let cardPics
 
 fetch('https://blooming-sierra-89816.herokuapp.com/api/v1/cards')
 .then(resp => resp.json())
@@ -14,19 +14,17 @@ fetch('https://blooming-sierra-89816.herokuapp.com/api/v1/cards')
     }
   })
   renderCards(cards)
-  listItems = document.querySelectorAll('li')
-  listItems.forEach(node => {
+  cardPics = document.querySelectorAll('img')
+  cardPics.forEach(node => {
     node.addEventListener('click', function(e) {
-      listItems.forEach(node => {
-        if (node !== e.target) {
-          node.style.color = 'white'
-        }
-      })
-      e.target.style.color = 'blue'
-      let clicked = cards.find(card => card.name === e.target.innerText)
+      let clicked = cards.find(card => card.picture === e.target.src)
       console.log(clicked)
-      info.innerHTML = `
-      <p>${clicked.description}</p>`
+      if (clicked.description !== null) {
+        info.innerHTML = `
+        <p>${clicked.description}</p>`
+      } else {
+        info.innerHTML = '<div></div>'
+      }
     })
   })
 })
