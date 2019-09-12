@@ -14,9 +14,24 @@ fetch('https://blooming-sierra-89816.herokuapp.com/api/v1/cards')
     }
   })
   renderCards(cards)
+  cardListener()
+})
+
+
+function renderCards(cards) {
+  cards.forEach(card => { list.innerHTML += `<img src=${card.picture} alt="oops"/>` })
+}
+
+document.querySelector('h1').addEventListener('click', () => {
+  list.innerHTML = ""
+  renderCards(cards)
+  cardListener()
+})
+
+function cardListener() {
   cardPics = document.querySelectorAll('img')
   cardPics.forEach(node => {
-    node.addEventListener('click', function(e) {
+    node.addEventListener('click', function (e) {
       let clicked = cards.find(card => card.picture === e.target.src)
       e.target.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnxjXZTHcRqwUrA4nW09UvtRlXPGlhAZdOQC6_-s71LayIknwS"
       if (clicked.description !== null) {
@@ -33,9 +48,4 @@ fetch('https://blooming-sierra-89816.herokuapp.com/api/v1/cards')
       }
     })
   })
-})
-
-
-function renderCards(cards) {
-  cards.forEach(card => { list.innerHTML += `<img src=${card.picture} alt="oops"/>` })
 }

@@ -19,6 +19,10 @@ h1 {
   margin-bottom: 50px;
 }
 
+h1:hover {
+  color: rgb(21, 105, 250);
+}
+
 #container {
   display: flex;
 }
