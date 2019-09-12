@@ -26,11 +26,11 @@ fetch('https://blooming-sierra-89816.herokuapp.com/api/v1/cards')
         <p>Card Type: ${clicked.card_type}</p>
         <p>Description: ${clicked.description}</p>
         <p>Cost: ${clicked.cost}</p>
-        <img src=${clicked.picture} alt="oops"/>`
+        <img src=${clicked.picture} alt="oops" class="large"/>`
       } else {
         info.innerHTML = `
         <h3>Trash</h3>
-        <img src=${clicked.picture} alt="oops"/>`
+        <img src=${clicked.picture} alt="oops" class="large"/>`
       }
     })
   })
