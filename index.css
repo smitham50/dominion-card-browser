@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Trajan Pro Regular';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Trajan Pro Regular'), local('Trajan Pro Regular'),
+}
+
 html, body {
   font-family: 'Trajan Pro Regular';
   background: url("https://cdna.artstation.com/p/assets/images/images/009/330/096/large/tomasz-jedruszek-asdominion-2nd.jpg?1518377966") no-repeat center center fixed;
@@ -7,7 +14,7 @@ html, body {
   color: white;
 }
 
-h2 {
+h1 {
   text-align: center;
   margin-bottom: 50px;
 }
@@ -37,6 +44,7 @@ img {
   height: 150px;
   margin-bottom: 10px;
   margin-right: 10px;
+  border-radius: 3px;
 }
 
 .large {

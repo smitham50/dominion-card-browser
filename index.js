@@ -19,7 +19,6 @@ fetch('https://blooming-sierra-89816.herokuapp.com/api/v1/cards')
     node.addEventListener('click', function(e) {
       let clicked = cards.find(card => card.picture === e.target.src)
       e.target.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnxjXZTHcRqwUrA4nW09UvtRlXPGlhAZdOQC6_-s71LayIknwS"
-      console.log(clicked)
       if (clicked.description !== null) {
         info.innerHTML = `
         <h3>${clicked.name}</h3>
