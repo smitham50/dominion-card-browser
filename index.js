@@ -1,7 +1,7 @@
-const list = document.querySelector('#card-list')
+const list = document.querySelector('#list')
 const info = document.querySelector('#card-info')
-let listItems
 const cards = []
+let listItems
 
 fetch('https://blooming-sierra-89816.herokuapp.com/api/v1/cards')
 .then(resp => resp.json())
@@ -26,7 +26,6 @@ fetch('https://blooming-sierra-89816.herokuapp.com/api/v1/cards')
       let clicked = cards.find(card => card.name === e.target.innerText)
       console.log(clicked)
       info.innerHTML = `
-      <img src=${clicked.picture} alt="oops"/>
       <p>${clicked.description}</p>`
     })
   })
@@ -34,5 +33,5 @@ fetch('https://blooming-sierra-89816.herokuapp.com/api/v1/cards')
 
 
 function renderCards(cards) {
-  cards.forEach(card => { list.innerHTML += `<li>${card.name}</li>` })
+  cards.forEach(card => { list.innerHTML += `<img src=${card.picture} alt="oops"/>` })
 }
